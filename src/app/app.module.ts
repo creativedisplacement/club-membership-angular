@@ -7,6 +7,9 @@ import { MemberAddComponent } from './member-add/member-add.component';
 import { MemberGetComponent } from './member-get/member-get.component';
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MemberService } from './member.service';
 
 @NgModule({
   declarations: [
@@ -15,8 +18,14 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
     MemberGetComponent,
     MemberEditComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SlimLoadingBarModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SlimLoadingBarModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
+  providers: [MemberService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
